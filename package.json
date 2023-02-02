@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "react-shop",
   "main": "src/index.js",
+  "homepage":"https://github.com/MoisesINMDeveloper/react-shop-platzi",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "author": "Moises Israel <MoisesINMDeveloper@hotmail.com>",
   "license": "MIT",
