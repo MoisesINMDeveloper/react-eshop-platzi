@@ -67,9 +67,11 @@ module.exports = {
 		})
 	],
 	devServer: {
-		// static: path.join(__dirname,"dist"),
-		// compress: true,
-		// port: 3000,
-		historyApiFallback: true,
+		static: {
+		directory: path.join(__dirname, 'public'),
+	},
+	compress: true,
+	port: 64340,
+	historyApiFallback: true,
 	}
 }
