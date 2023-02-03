@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "react-shop",
   "main": "src/index.js",
-  "homepage":"https://github.com/MoisesINMDeveloper/react-eshop-platzi",
+  "homepage":"https://MoisesINMDeveloper.github.io/react-eshop-platzi/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "deploy":"gh-pages -b main -d dist",
     "start": "webpack serve --open",
     "build": "webpack --mode production"
   },
