@@ -7,8 +7,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js',
-		publicPath: "/react-eshop-platzi/",
-		clean: true	
+		publicPath: "/",
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
@@ -68,9 +67,10 @@ module.exports = {
 		})
 	],
 	devServer: {
-		static: path.join(__dirname,"dist"),
-		compress: true,
-		port: 3000,
-		historyApiFallback: true,
-	}
+        allowedHosts: path.join(__dirname, 'dist'),
+        historyApiFallback: true,
+        compress: true,
+        port: 8080,
+        open: true,
+    }
 }
