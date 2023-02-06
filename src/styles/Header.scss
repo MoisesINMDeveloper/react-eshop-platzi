@@ -1,90 +1,99 @@
-@use "./vars";
-
-nav {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    padding: 0 24px;
-    border-bottom: 1px solid var(--very-light-pink);
+//-----------------------------------HEADER------------------------------------------
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  height: 60px;
+  border-bottom: 1px solid var(--very-light-pink);
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
-
+.header__logo {
+  width: 150px;
+}
+.header__navbar {
+  height: 100%;
+}
+.header__navbar .list{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__navbar .list__item {
+  text-decoration: none;
+  color: var(--very-light-pink);
+  border: 1px solid var(--white);
+  padding: 8px;
+  border-radius: 12px;
+}
+.header__navbar .list__item:hover {
+  border: 1px solid var(--hospital-green);
+  color: var(--hospital-green);
+}
 .menu {
-    display: none;
+  display: none;
 }
 
-.logo {
-    width: 100px;
-}
-
-.navbar-left ul,
-.navbar-right ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    height: 60px;
-}
-
+//-------------NAVBAR-LEFT----------
 .navbar-left {
-    display: flex;
+  display: flex;
+  font-size: var(--md);
+  gap: 28px;
 }
-
-.navbar-left ul {
-    margin-left: 12px;
+//------------NAVBAR-RIGTH-----------
+.navbar-right {
+  width: 200px;
 }
-
-.navbar-left ul li a,
-.navbar-right ul li a {
-    text-decoration: none;
-    color: var(--very-light-pink);
-    border: 1px solid var(--white);
-    padding: 8px;
-    border-radius: 8px;
+.navbar-right .list{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
 }
-
-.navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+.list__email {
+  color: var(--black);
+  font-size: var(--sm);
+  cursor: pointer;
 }
-
-.navbar-email {
-    color: var(--very-light-pink);
-    font-size: var(--sm);
-    margin-right: 12px;
-    cursor: pointer;
+.shopping-cart {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
 }
-
-.navbar-shopping-cart {
-    position: relative;
+.shopping-cart__icon{
+  width: 100%;
+  object-fit: cover;
 }
-
-.navbar-shopping-cart div {
-    width: 16px;
-    height: 16px;
-    background-color: var(--hospital-green);
-    border-radius: 50%;
-    font-size: var(--sm);
-    font-weight: bold;
-    position: absolute;
-    top: -6px;
-    right: -3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.shopping-cart__quantity{
+  width: 16px;
+  height: 16px;
+  background-color: var(--hospital-green);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
-
 @media (max-width: 640px) {
-    .menu {
-        display: block;
-    }
-
-    .navbar-left ul {
-        display: none;
-    }
-
-    .navbar-email {
-        display: none;
-    }
+  .header {
+      padding: 0 28px;
+  }
+  .menu {
+      display: block;
+      cursor: pointer;
+  }
+  .navbar-left .list {
+      display: none;
+  }
+  .navbar-right {
+    width: auto;
+  }
+  .list__email {
+      display: none;
+  }
 }

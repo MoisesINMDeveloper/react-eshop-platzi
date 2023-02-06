@@ -1,22 +1,32 @@
-import React from 'react';
+import { useContext } from 'react';
+import addToCart from  '@icons/bt_add_to_cart.svg';
+import closeIcon from  '@icons/icon_close.png';
+import AppContext from '@context/AppContext';
 import '@styles/ProductInfo.scss';
-import BtAddToCart from "@icons/bt_add_to_cart.svg"
 
-const ProductInfo = () => {
-    return (
-        <>
-            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike" />
-            <div className="ProductInfo">
-                <p>$35,00</p>
-                <p>Bike</p>
-                <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-                <button className="primary-button add-to-cart-button">
-                    <img src={BtAddToCart} alt="add to cart" />
-                    Add to cart
-                </button>
-            </div>
-        </>
-    );
+const ProductInfo = ({ product }) => {
+	const { state: {actualProduct} } = useContext(AppContext)
+	const { removeProduct } = useContext(AppContext);
+
+	return (
+		<section className='ProductInfo'>
+			<div className='ProductInfo__container'>
+				<div onClick={removeProduct} className='ProductInfo__close'>
+					<img className='ProductInfo__icon' src={closeIcon} alt="close product" />
+				</div>
+				<img className='ProductInfo__image' src={product.images[0]} alt={product.title} />
+				<div className="ProductInfo__text">
+					<p className='ProductInfo__price'>$ {product.price}</p>
+					<p className='ProductInfo__name'>{product.title}</p>
+					<p className='ProductInfo__description'>{product.description}</p>
+					<button className="ProductInfo__button add-to-cart-button">
+						<img src={addToCart} alt="add to cart" />
+						Add to cart
+					</button>
+				</div>
+			</div>
+		</section>
+	);
 }
 
 export default ProductInfo;

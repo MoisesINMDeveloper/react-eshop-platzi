@@ -1,29 +1,31 @@
-@use './vars';
-
-.Order {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 12px;
+.ProductDetail {
+  width: 360px;
+  padding-bottom: 24px;
+  position: absolute;
+  right: 0;
 }
-
-.Order p:nth-child(1) {
-    display: flex;
-    flex-direction: column;
+.ProductDetail-close {
+  background: var(--white);
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  padding: 12px;
+  border-radius: 50%;
 }
-
-.Order p span:nth-child(1) {
-    font-size: var(--md);
-    font-weight: bold;
+.ProductDetail-close:hover {
+  cursor: pointer;
 }
-
-.Order p span:nth-child(2) {
-    font-size: var(--sm);
-    color: var(--very-light-pink);
+.ProductDetail > img:nth-child(2) {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
 }
-
-.Order p:nth-child(2) {
-    text-align: end;
-    font-weight: bold;
+@media (max-width: 640px) {
+  .ProductDetail {
+    width: 100%;
+  }
 }

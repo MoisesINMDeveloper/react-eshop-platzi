@@ -1,24 +1,23 @@
-import React from 'react';
+import logo from '@logos/logo_yard_sale.svg';
 import '@styles/NewPassword.scss';
-import LogoSale from "@logos/logo_yard_sale.svg";
 
 const NewPassword = () => {
-    return (
-        <div className="NewPassword">
-            <div className="NewPassword-container">
-                <img src={LogoSale} alt="logo" className="logo" />
-                <h1 className="title">Create a new password</h1>
-                <p className="subtitle">Enter a new passwrd for yue account</p>
-                <form action="/" className="form">
-                    <label for="password" className="label">Password</label>
-                    <input type="password" id="password" placeholder="*********" className="input input-password" />
-                    <label for="new-password" className="label">Password</label>
-                    <input type="password" id="new-password" placeholder="*********" className="input input-password" />
-                    <input type="submit" value="Confirm" className="primary-button login-button" />
-                </form>
-            </div>
-        </div>
-    );
+	return (
+		<div className="NewPassword">
+			<div className="NewPassword__container">
+				<img src={logo} alt="logo" className="NewPassword__logo" />
+				<h1 className="NewPassword__title">Create a new password</h1>
+				<p className="NewPassword__subtitle">Enter a new passwrd for yue account</p>
+				<form action="/" className="NewPassword__form">
+					<label forhtml="password" className="NewPassword__label">Password</label>
+					<input type="password" id="password" placeholder="*********" className="NewPassword__input input-password" />
+					<label forhtml="new-password" className="NewPassword__label">Password</label>
+					<input type="password" id="new-password" placeholder="*********" className="NewPassword__input input-password" />
+					<input type="submit" value="Confirm" className="button confirm-button" />
+				</form>
+			</div>
+		</div>
+	);
 }
 
 export default NewPassword;

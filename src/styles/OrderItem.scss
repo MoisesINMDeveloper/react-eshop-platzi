@@ -1,33 +1,22 @@
-@use './vars';
-
 .OrderItem {
-    display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    gap: 16px;
-    margin-bottom: 24px;
-    align-items: center;
+	display: grid;
+	grid-template-columns: auto 1fr auto auto;
+	gap: 16px;
+	align-items: center;
 }
-
-.OrderItem figure {
-    margin: 0;
+.OrderItem__img-container{
+	margin: 0;
 }
-.OrderItem img {
-    cursor: pointer;
+.OrderItem__icon {
+	width: 70px;
+	height: 70px;
+	border-radius: 20px;
+	object-fit: cover;
 }
-
-.OrderItem figure img {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-    object-fit: cover;
+.OrderItem__title {
+	color: var(--very-light-pink);
 }
-
-.OrderItem p:nth-child(2) {
-    color: var(--very-light-pink);
-}
-
-.OrderItem p:nth-child(3) {
-    font-size: var(--md);
-    font-weight: bold;
-    color: var(--hospital-green)
+.OrderItem__price {
+	font-size: var(--md);
+	font-weight: bold;
 }

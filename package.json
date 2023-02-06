@@ -1,39 +1,50 @@
 {
   "name": "react-shop",
   "version": "1.0.0",
-  "description": "react-shop",
+  "description": "react eshop",
   "main": "src/index.js",
-  "homepage":"https://MoisesINMDeveloper.github.io/react-eshop-platzi/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy":"npm run build",
-    "deploy":"msg=`git show-branch --no-name HEAD` && gh-pages -b newDeploy -d dist -m \"$msg\" s",
-    "start": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "msg=`git show-branch --no-name HEAD` && gh-pages -b newDeploy -d dist -m \"$msg\" ",
+    "start": "webpack serve",
     "build": "webpack --mode production"
   },
-  "author": "Moises Israel <MoisesINMDeveloper@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoisesINMDeveloper/react-eshop-platzi.git"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "Moises I. Navarro M. <moisesinmdeveloper@hotmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monoald/react-shop/issues"
+  },
   "dependencies": {
-    "axios": "^1.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0"
+    "axios": "^0.27.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.7.3",
-    "gh-pages": "^5.0.0",
-    "html-loader": "^4.2.0",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "gh-pages": "^3.2.3",
+    "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.2",
-    "sass": "^1.58.0",
-    "sass-loader": "^13.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
   }
 }

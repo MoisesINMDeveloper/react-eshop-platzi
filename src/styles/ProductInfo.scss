@@ -1,44 +1,67 @@
-@use './vars';
-
 .ProductInfo {
-    margin: 24px 24px 0 24px;
+	width: 380px;
+	position: sticky;
+	top: 60px;
+	float: right;
+}
+.ProductInfo__container {
+	width: 100%;
+	height: calc(100vh - 60px);
+	max-height: calc(100vh - 60px);
+	position: absolute;
+	right: 0;	
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+.ProductInfo__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-bottom-left-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+.ProductInfo__text {
+	height: 100%;
+	padding: 48px 28px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 24px;
+}
+.ProductInfo__price {
+	font-weight: bold;
+}
+.ProductInfo__button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	width: 100%;
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
 }
 
-.ProductInfo p:nth-child(1) {
-    font-weight: bold;
-    font-size: var(--md);
-    margin-top: 0;
-    margin-bottom: 4px;
+.ProductInfo__close {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 }
-
-.ProductInfo p:nth-child(2) {
-    color: var(--very-light-pink);
-    font-size: var(--md);
-    margin-top: 0;
-    margin-bottom: 36px;
-}
-
-.ProductInfo p:nth-child(3) {
-    color: var(--very-light-pink);
-    font-size: var(--sm);
-    margin-top: 0;
-    margin-bottom: 36px;
-}
-
-.primary-button {
-    background-color: var(--hospital-green);
-    border-radius: 8px;
-    border: none;
-    color: var(--white);
-    width: 100%;
-    cursor: pointer;
-    font-size: var(--md);
-    font-weight: bold;
-    height: 50px;
-}
-
-.add-to-cart-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ProductInfo__icon {
+	width: 14px;
+	height: 14px;
 }

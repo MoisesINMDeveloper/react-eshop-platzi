@@ -1,22 +1,25 @@
-import React from 'react';
+import logo from '@logos/logo_yard_sale.svg';
+import emailIcon from '@icons/email.svg';
 import '@styles/PasswordRecovery.scss';
-import LogoSale from "@logos/favicon_yard_sale.svg"
 
-const PasswordRecovery = () => {
-    return (
-        <div className="PasswordRecovery">
-            <div className="PasswordRecovery-container">
-                <img src={LogoSale} alt="logo" className="logo" />
-                <h1 className="title">Password recovery</h1>
-                <p className="subtitle">Inform the email address used to create your account</p>
-                <form action="/" className="form">
-                    <label htmlFor="email" className="label">Email address</label>
-                    <input type="text" id="email" className="input input-email" />
-                    <input type="submit" value="Confirm" className="primary-button login-button" />
-                </form>
-            </div>
+const RecoveryPassword = () => {
+  return (
+    <div className="PasswdRecovery">
+      <div className="PasswdRecovery__form">
+        <img src={logo} alt="logo" className="PasswdRecovery__logo" />
+        <h1 className="PasswdRecovery__title">Email has been sent!</h1>
+        <p className="PasswdRecovery__subtitle">Please check your inbox for instructions on how to reset the password</p>
+        <div className="PasswdRecovery__email-image">
+          <img className='icon' src={emailIcon} alt="email" />
         </div>
-    );
+        <button className="primary-button">Back</button>
+        <p className="resend">
+          <span className='resend__text'>Didn't receive the email?</span>
+          <a className='resend__link' href="/">Resend</a>
+        </p>
+      </div>
+    </div>
+  )
 }
 
-export default PasswordRecovery;
+export default RecoveryPassword
