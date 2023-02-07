@@ -16,26 +16,26 @@ import '@styles/global.css';
 
 const App = () => {
   const initialState = useInitialState();
-    return (
-      <AppContext.Provider value={initialState}>
-        <BrowserRouter basename='/react-shop'>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/password-recovery" element={<PasswordRecovery />} />
-                <Route path="/send-email" element={<SendEmail />} />
-                <Route path="/new-password" element={<NewPassword />} />
-                <Route path="/account" element={<MyAccount />} />
-                <Route path="/signup" element={<CreateAccount />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/*" element={<NotFound />} />
-              </Route>
-            </Routes>
-        </BrowserRouter>
-      </AppContext.Provider>
-    );
-  };
+  return (
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter basename='/react-eshop'>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/password-recovery" element={<PasswordRecovery />} />
+            <Route path="/send-email" element={<SendEmail />} />
+            <Route path="/new-password" element={<NewPassword />} />
+            <Route path="/account" element={<MyAccount />} />
+            <Route path="/signup" element={<CreateAccount />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
+  );
+};
 
 export default App;
