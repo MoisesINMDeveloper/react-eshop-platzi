@@ -15,8 +15,8 @@
 	border: 1px solid var(--very-light-pink);
 	display: flex;
 	flex-direction: column;
-	-webkit-animation: tilt-in-right-1 0.40s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: tilt-in-right-1 0.40s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: tilt-in-right-1 0.60s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-right-1 0.60s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @-webkit-keyframes tilt-in-right-1 {
 	0% {
@@ -75,6 +75,7 @@
 }
 .title {
 	font-size: var(--lg);
+	margin-bottom: 20px;
 	font-weight: bold;
 }
 .order {

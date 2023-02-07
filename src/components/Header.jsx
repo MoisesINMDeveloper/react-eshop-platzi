@@ -12,7 +12,7 @@ const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-    const { state: {cart} } = useContext(AppContext);
+    const { state: { cart } } = useContext(AppContext);
 
     const handleToggle = () => {
         setToggle(!toggle);
@@ -51,19 +51,19 @@ const Header = () => {
             <div className="navbar-right">
                 <ul>
                     <li className="navbar-email" onClick={handleToggle} >
-                        rauljariasz@example.com
+                        moisesinmdeveloper@hotmail.com
                     </li>
-                    <li 
-                        className="navbar-shopping-cart" 
+                    <li
+                        className="navbar-shopping-cart"
                         onClick={() => setToggleOrders(!toggleOrders)}
                     >
-                    <img src={shoppingCart} alt="shopping cart" />
-                    { cart.length > 0 && <div>{ cart.length > 9 ? '+9' : cart.length }</div> }
+                        <img src={shoppingCart} alt="shopping cart" />
+                        {cart.length > 0 && <div>{cart.length > 9 ? '+9' : cart.length}</div>}
                     </li>
                 </ul>
             </div>
             {toggle ? <Menu /> : ""}
-            {toggleOrders && <MyOrder toggleOrders={toggleOrders} setToggleOrders={setToggleOrders}/>}
+            {toggleOrders && <MyOrder toggleOrders={toggleOrders} setToggleOrders={setToggleOrders} />}
             {toggleMobileMenu ? <MobileMenu /> : ""}
         </nav>
     );
