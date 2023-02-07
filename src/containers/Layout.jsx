@@ -1,9 +1,13 @@
-const Layout = ({ children }) => {
-  return (
-    <div className="Layout">
-      { children }
-    </div>
-  )
-}
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
-export default Layout
+const Layout = ({ Children }) => {
+    return (
+        <div className="Layout">
+            <Header />
+            <Outlet />
+        </div>
+    );
+};
+
+export default Layout;

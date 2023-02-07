@@ -1,9 +1,14 @@
+@use './vars';
+
+.main-container {
+	margin-top: 75px;
+}
 .ProductList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 240px);
 	gap: 26px;
 	place-content: center;
-	padding: 40px;
+	margin: 3em 0 0 0;
 }
 
 @media (max-width: 640px) {

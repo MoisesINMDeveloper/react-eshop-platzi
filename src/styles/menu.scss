@@ -1,38 +1,66 @@
+@use './vars';
+
 .Menu {
-	width: 160px;
+	width: 100px;
 	height: auto;
-	max-height: 180px;
 	border: 1px solid var(--very-light-pink);
 	border-radius: 6px;
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 	position: absolute;
 	top: 60px;
-	right: 80px;
-	background-color: white;
+	right: 50px;
+	background-color: var(--white);
+	animation: swipeLeftmenu .40s;
+	-webkit-animation: fade-in-right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-.Menu__list {
-	height: 100%;
+@-webkit-keyframes fade-in-right {
+	0% {
+	  -webkit-transform: translateX(50px);
+			  transform: translateX(50px);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: translateX(0);
+			  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  @keyframes fade-in-right {
+	0% {
+	  -webkit-transform: translateX(50px);
+			  transform: translateX(50px);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: translateX(0);
+			  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+.Menu ul {
 	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 18px;
+	padding: 0;
+	margin: 0;
 }
-.list-item {
+.Menu ul li {
 	text-align: end;
+}
+.Menu ul li:nth-child(1),
+.Menu ul li:nth-child(2) {
 	font-weight: bold;
 }
-.sign-out {
+.Menu ul li:last-child {
 	padding-top: 20px;
 	border-top: 1px solid var(--very-light-pink);
 }
-.sign-out__text {
+.Menu ul li:last-child a {
 	color: var(--hospital-green);
 	font-size: var(--sm);
-	text-decoration: none;
 }
-.list-item__element {
+.Menu ul li a {
 	color: var(--back);
-	font-size: var(--sm);
 	text-decoration: none;
+	margin-bottom: 20px;
 	display: inline-block;
 }

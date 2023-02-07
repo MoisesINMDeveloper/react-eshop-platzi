@@ -1,42 +1,31 @@
-import { useContext  } from 'react';
-import AppContext from '@context/AppContext';
-import removefromCartImage from '@icons/bt_added_to_cart.svg'
-import addToCartImage from '@icons/bt_add_to_cart.svg';
+import { useContext } from 'react';
 import '@styles/ProductItem.scss';
+import AppContext from '@context/AppContext'
+import btAddCart from "@icons/bt_add_to_cart.svg";
+import btAddedCart from "@icons/bt_added_to_cart.svg"
 
 const ProductItem = ({ product }) => {
-	const { addToCart,addProduct } = useContext(AppContext);
-	const {  removeFromCart } = useContext(AppContext);
-	const { state: {cart} } = useContext(AppContext);
+	const { addToCart, removeFromCart, state } = useContext(AppContext);
+	const itsProductAdded = () => state.cart.some( (item) => item.id === product.id) ? true : false;
+	const handleClick = (item) => {
+		itsProductAdded() ? removeFromCart(item) : addToCart(item);
+	  };
 
-	const isProductAdded = () => cart.some( (item) => item.id == product.id) ? true : false;
-
-	const handleCart = (item) => {
-		isProductAdded() ? removeFromCart(item.id) : addToCart(item);
-	}
-
-	
-	// const handleClick = (item) => {
-	// 	addToCart(item);
-	// }
-
-	const handleProduct = (item) => {
-		addProduct(item);
-	}
 
 	return (
 		<div className="ProductItem">
-			<img onClick={() => handleProduct(product)} className='ProductItem__image' src={product.images[0]} alt={product.title} />
-			<div className="ProductItem__info">
+			<img src={product.images[0]} alt={product.title} />
+			<div className="product-info">
 				<div>
-					<p className='ProductItem__price'>$ {product.price}</p>
-					<p className='ProductItem__name'>{product.title}</p>
+					<p>${product.price}</p>
+					<p>{product.title}</p>
 				</div>
-				<figure className='ProductItem__add-to-cart' onClick={() => handleCart(product)}>
-					{ isProductAdded()
-					? (	<img className='ProduProductItem__icon' src={removefromCartImage} alt="" /> ) 
-					: ( <img className='ProduProductItem__icon' src={addToCartImage} alt="" /> )
-					}
+				<figure onClick={() => handleClick(product)}>
+					{ itsProductAdded() ? (
+						<img src={btAddedCart} alt="" className="btAddedCart"/>
+					) : (
+						<img src={btAddCart} alt="" className="btAddCart"/>
+					)}
 				</figure>
 			</div>
 		</div>

@@ -1,50 +1,101 @@
+@use './vars';
+
 .MyOrder {
+	z-index: 999;
 	width: 360px;
-	height: auto;
-	max-height: calc(100vh - 60px);
+	max-height: calc(100vh - 65px);
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
-	background-color: white;
+	background-color: var(--white);
 	top: 60px;
 	bottom: auto;
 	border-radius: 6px;
 	border: 1px solid var(--very-light-pink);
+	display: flex;
+	flex-direction: column;
+	-webkit-animation: tilt-in-right-1 0.40s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-right-1 0.40s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-.MyOrder__title-container {
+@-webkit-keyframes tilt-in-right-1 {
+	0% {
+	  -webkit-transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+			  transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: rotateX(0deg) translateX(0) skewX(0deg);
+			  transform: rotateX(0deg) translateX(0) skewX(0deg);
+	  opacity: 1;
+	}
+  }
+  @keyframes tilt-in-right-1 {
+	0% {
+	  -webkit-transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+			  transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: rotateX(0deg) translateX(0) skewX(0deg);
+			  transform: rotateX(0deg) translateX(0) skewX(0deg);
+	  opacity: 1;
+	}
+  }
+  
+.my-order-content {
+	height: auto;
+	overflow-y: scroll;
+}
+/* width */
+.my-order-content::-webkit-scrollbar {
+	width: 5px;
+}
+/* Track */
+.my-order-content::-webkit-scrollbar-track {
+	background: var(--white);
+}
+/* Handle */
+.my-order-content::-webkit-scrollbar-thumb {
+	background: #9dd8a5;
+}
+/* Handle on hover */
+.my-order-content::-webkit-scrollbar-thumb:hover {
+	background: #69b974;
+}
+.CloseOrders {
+	cursor: pointer;
+}
+.title-container {
 	display: flex;
 }
-.MyOrder__close {
+.title-container img {
 	transform: rotate(180deg);
-	display: none;
+	margin-right: 14px;
 }
 .title {
 	font-size: var(--lg);
 	font-weight: bold;
 }
-.MyOrder__content {
-	height: 100%;
-	max-height: 500px;
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
-	overflow-y: auto;
-}
-.MyOrder .order {
+.order {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 16px;
 	align-items: center;
 	background-color: var(--text-input-field);
+	margin-bottom: 24px;
 	border-radius: 8px;
-	padding: 12px 24px;
+	padding: 0 24px;
 }
-.MyOrder .order__title {
+.order p:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+}
+.order p span:nth-child(1) {
 	font-size: var(--md);
 	font-weight: bold;
 }
-.MyOrder .order__total {
+.order p:nth-child(2) {
 	text-align: end;
 	font-weight: bold;
 }

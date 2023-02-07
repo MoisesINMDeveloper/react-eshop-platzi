@@ -1,14 +1,11 @@
-import Header from "@components/Header";
-import ProductList from '@containers/ProductList';
+import ProductList from '../containers/ProductList';
 
 const Home = () => {
-  return (
-    <>
-      <Header />
-      <ProductList />
-    </>
-    
-  )
+	return (
+		<>
+			<ProductList />
+		</>
+	);
 }
 
 export default Home;

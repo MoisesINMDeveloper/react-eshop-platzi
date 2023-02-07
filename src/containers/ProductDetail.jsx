@@ -1,12 +1,13 @@
-import closeIcon from '@icons/icon_close.png';
-import ProductInfo from '@components/ProductInfo';
-import '@styles/ProductDetail.scss';
+import ProductInfo from '../components/ProductInfo';
+import '../styles/ProductDetail.scss';
+
+import pdIconClose from "@icons/icon_close.png"
 
 const ProductDetail = () => {
 	return (
 		<aside className="ProductDetail">
 			<div className="ProductDetail-close">
-				<img src={closeIcon} alt="close" />
+				<img src={pdIconClose} alt="close" />
 			</div>
 			<ProductInfo />
 		</aside>

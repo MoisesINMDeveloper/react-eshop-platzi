@@ -1,22 +1,29 @@
+@use './vars';
+
 .OrderItem {
 	display: grid;
 	grid-template-columns: auto 1fr auto auto;
 	gap: 16px;
+	margin-bottom: 24px;
+	margin-right: 10px;
 	align-items: center;
 }
-.OrderItem__img-container{
+.OrderItem figure {
 	margin: 0;
 }
-.OrderItem__icon {
+.OrderItem figure img {
 	width: 70px;
 	height: 70px;
 	border-radius: 20px;
 	object-fit: cover;
 }
-.OrderItem__title {
+.OrderItem p:nth-child(2) {
 	color: var(--very-light-pink);
 }
-.OrderItem__price {
+.OrderItem p:nth-child(3) {
 	font-size: var(--md);
 	font-weight: bold;
+}
+.removeOrder {
+	cursor: pointer;
 }
