@@ -1,4 +1,4 @@
-import '@styles/Menu.scss';
+import '@styles/menu.scss';
 
 const Menu = () => {
 	return (
