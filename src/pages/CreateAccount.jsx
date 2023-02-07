@@ -1,4 +1,4 @@
-import '../styles/CreateAccount.scss';
+import '@styles/CreateAccount.scss';
 
 const CreateAccount = () => {
 	return (

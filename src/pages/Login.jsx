@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import '../styles/Login.scss';
+import '@styles/Login.scss';
 
 import logo from "@logos/logo_yard_sale.svg"
 
@@ -25,11 +25,11 @@ const Login = () => {
 					<input type="text" name="email" placeholder="platzi@example.cm" className="input input-email" />
 					<label htmlFor="password" className="label">Password</label>
 					<input type="password" name="password" placeholder="*********" className="input input-password" />
-					<input 
-					type="submit" 
-					value="Log in" 
-					className="primary-button login-button" 
-					onClick={handleSubmit} />
+					<input
+						type="submit"
+						value="Log in"
+						className="primary-button login-button"
+						onClick={handleSubmit} />
 					<a href="/">Forgot my password</a>
 				</form>
 				<button className="secondary-button signup-button" >

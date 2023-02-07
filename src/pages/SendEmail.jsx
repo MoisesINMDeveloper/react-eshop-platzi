@@ -1,10 +1,10 @@
-import '../styles/SendEmail.scss';
+import '@styles/SendEmail.scss';
 
 import email from "@icons/email.svg"
 
 const SendEmail = () => {
-    return (
-        <div className="SendEmail">
+	return (
+		<div className="SendEmail">
 			<div className="SendEmail-form-container">
 				<h1 className="SendEmail-title">Email has been sent!</h1>
 				<p className="SendEmail-subtitle">Please check your inbox for instructions on how to reset the password</p>
@@ -18,7 +18,7 @@ const SendEmail = () => {
 				</p>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default SendEmail;

@@ -1,5 +1,5 @@
-import ProductInfo from '../components/ProductInfo';
-import '../styles/ProductDetail.scss';
+import ProductInfo from '@components/ProductInfo';
+import '@styles/ProductDetail.scss';
 
 import pdIconClose from "@icons/icon_close.png"
 

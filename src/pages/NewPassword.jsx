@@ -1,5 +1,4 @@
-import '../styles/NewPassword.scss';
-
+import '@styles/NewPassword.scss';
 import logo from "@logos/logo_yard_sale.svg"
 
 const NewPassword = () => {
